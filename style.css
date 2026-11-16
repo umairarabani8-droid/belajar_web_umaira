@@ -1,0 +1,151 @@
+/* Biar rapi semua */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f4f4;
+}
+
+/* NAVBAR - pake Flexbox biar logo kiri, menu kanan */
+header nav {
+    background: #de6dec;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* HERO - pake Flexbox biar teks kiri, foto kanan */
+#home {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 50px 30px;
+    background: white;
+}
+
+#home h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+#home a {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+/* 3 KOLOM - pake Flexbox biar sejajar */
+#skill {
+    padding: 40px 30px;
+    text-align: center;
+}
+
+#skill article {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+}
+
+/* Ini yang bikin 3 kartu sejajar */
+#skill {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Biar lebih gampang, pake cara ini: */
+#skill-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* FORM + FOOTER */
+#kontak {
+    padding: 40px 30px;
+    background: white;
+}
+#kontak input, #kontak textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+}
+#kontak button {
+    background: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* MEDIA QUERY - INI KUNCINYA BUAT HP */
+@media (max-width: 768px) {
+    /* Navbar jadi numpuk */
+    header nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Hero yang tadinya kiri-kanan, jadi atas-bawah */
+    #home {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* 3 kartu yang tadinya sejajar, jadi ke bawah 1-1-1 */
+    #skill-container {
+        flex-direction: column;
+    }
+
+    #home h1 {
+        font-size: 26px;
+    }
+}
+/* FIX HERO BIAR GAK KEPOTONG */
+#home .hero-text {
+    flex: 1;
+    max-width: 600px;
+}
+#home .hero-text p {
+    line-height: 1.6;
+}
+#home img {
+    width: 350px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+#home a {
+    white-space: nowrap;
+}
